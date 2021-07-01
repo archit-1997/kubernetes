@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: client-pod
+    labels:
+        component: web
+spec:
+    containers:
+        - name: client
+          image: stephengrider/multi-worker
+          ports:
+              - containerPort: 3000
+# NOTE : metadat:name and kind act as a unique pair for a given k8s clusters
